@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аналитическое досье — Группа LETTA / «Летта» (Басов, Нижний Новгород)</title>
+<meta name="description" content="Аналитическое досье по группе LETTA: фабрика «Приволжская» + маркетплейс-оператор «Летта». Открытые данные, финансы 2021–2025, риск-светофор. Автор — Александр Дублин.">
+<style>
+  :root{
+    --accent:#127a8a; --dark:#0c4a54; --accent2:#159e86; --bg:#f2f7f8; --card:#fff;
+    --text:#17242a; --muted:#5f727a; --line:#d6e6e8; --zebra:#eaf3f4;
+    --green:#1e9e57; --amber:#d99a00; --red:#cf3b2e;
+    --shadow:0 1px 2px rgba(12,74,84,.05),0 8px 24px rgba(12,74,84,.07);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.62;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  .hero{background:linear-gradient(135deg,#0c4a54,#127a8a 60%,#159e86);color:#eefaf9;padding:56px 0 46px}
+  .hero .wrap{position:relative}
+  .kick{display:inline-block;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#a8e6dd;
+    border:1px solid rgba(168,230,221,.4);border-radius:20px;padding:4px 13px;margin-bottom:16px}
+  .hero h1{font-size:clamp(25px,4.4vw,40px);margin:0 0 12px;font-weight:800;letter-spacing:-.02em;line-height:1.12}
+  .hero p{font-size:clamp(15px,2.2vw,18px);color:#cfeae7;max-width:720px;margin:0 0 22px}
+  .lights{display:flex;flex-wrap:wrap;gap:8px}
+  .light{background:rgba(255,255,255,.12);border-radius:10px;padding:8px 13px;font-size:13px;font-weight:600}
+  .layout{display:flex;gap:26px;align-items:flex-start}
+  nav.toc{position:sticky;top:14px;flex:none;width:210px;font-size:13.5px;padding-top:34px}
+  nav.toc a{display:block;color:var(--muted);padding:5px 10px;border-radius:7px;border-left:2px solid transparent}
+  nav.toc a:hover{background:var(--zebra);color:var(--accent);text-decoration:none}
+  main{flex:1;min-width:0}
+  section{padding:30px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(20px,3vw,27px);margin:0 0 14px;font-weight:800;color:var(--dark);letter-spacing:-.01em}
+  h2 .n{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;background:var(--accent);
+    color:#fff;border-radius:8px;font-size:15px;margin-right:9px;vertical-align:2px}
+  h3{font-size:17px;margin:20px 0 8px;color:var(--dark)}
+  p{margin:0 0 12px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+  th,td{padding:7px 9px;text-align:right;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  thead th{background:var(--zebra);color:var(--dark);font-weight:700;font-size:12px}
+  tbody tr:nth-child(even){background:var(--zebra)}
+  .tblwrap{overflow-x:auto}
+  .callout{background:var(--zebra);border-left:4px solid var(--accent);border-radius:8px;padding:13px 15px;margin:14px 0;font-size:14px}
+  .callout.amber{border-left-color:var(--amber);background:#fdf6e8}
+  .callout.green{border-left-color:var(--green);background:#eefaf1}
+  .callout.red{border-left-color:var(--red);background:#fdeeec}
+  ul{margin:8px 0 12px;padding-left:20px} li{margin-bottom:5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:14px 0}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+  .stat b{display:block;font-size:24px;color:var(--dark);line-height:1.1}
+  .stat span{font-size:12.5px;color:var(--muted)}
+  .risk-tbl td:first-child{width:40px;text-align:center;font-size:16px}
+  .chart{margin:16px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+  .chart h4{margin:0 0 12px;font-size:14px;color:var(--dark)}
+  .bars{display:flex;align-items:flex-end;gap:12px;height:180px;padding-top:10px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
+  .barpair{display:flex;gap:3px;align-items:flex-end;height:100%;width:100%;justify-content:center}
+  .bar{width:26px;border-radius:4px 4px 0 0;position:relative;min-height:2px}
+  .bar.rev{background:linear-gradient(180deg,#159e86,#127a8a)}
+  .bar.prof{background:linear-gradient(180deg,#8fd0c6,#4fb3a4)}
+  .bar.cap{background:linear-gradient(180deg,#127a8a,#0c4a54)}
+  .bar span{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--muted);white-space:nowrap}
+  .barcol .yr{font-size:11.5px;color:var(--muted);font-weight:600}
+  .lgnd{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:8px}
+  .lgnd i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:middle}
+  .tree{background:var(--dark);color:#cfeae7;border-radius:10px;padding:16px 18px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;overflow-x:auto;line-height:1.7}
+  .author-grid{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:start}
+  .author-grid img{width:140px;height:140px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+  .author-grid h3{margin:0 0 3px;font-size:21px;color:var(--dark)}
+  .role{color:var(--accent);font-weight:600;margin:0 0 10px}
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+  .svc-card{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--card)}
+  .svc-card h4{margin:0 0 7px;font-size:13.5px;color:var(--dark)} .svc-card ul{margin:0;padding-left:17px;font-size:12.5px;color:var(--muted)}
+  footer{background:var(--dark);color:#9fc4c8;padding:26px 0;font-size:12.5px}
+  .menu-btn{display:none}
+  @media(max-width:760px){
+    nav.toc{display:none} .menu-btn{display:block}
+    .author-grid{grid-template-columns:1fr} .svc{grid-template-columns:1fr}
+    .bar{width:18px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kick">Аналитическое досье · открытые данные</span>
+    <h1>Группа LETTA / «Летта»</h1>
+    <p>Нижегородская производственно-торговая группа Антона Басова: собственная фабрика «Приволжская»
+      (170 чел.) + маркетплейс-оператор «Летта». Мебель «в стиле ИКЕА» на Ozon, Wildberries и Яндекс.Маркете.
+      Структура, финансы 2021–2025, репутация, риски — по открытым данным.</p>
+    <div class="lights">
+      <span class="light">🟢 Реальное производство + прибыльный рост</span>
+      <span class="light">🟢 Капитал контура ~480 млн, растёт</span>
+      <span class="light">🟡 Тонкая касса и всплеск «прочих расходов»</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="toc">
+    <a href="#s1">1 · Резюме и светофор</a>
+    <a href="#s2">2 · Юрструктура</a>
+    <a href="#s3">3 · Бизнес и производство</a>
+    <a href="#s4">4 · Маркетплейсы</a>
+    <a href="#s5">5 · Финансы группы</a>
+    <a href="#s6">6 · Репутация и HR</a>
+    <a href="#s7">7 · Суды и проверки</a>
+    <a href="#s8">8 · Выводы</a>
+    <a href="#author">★ Об авторе</a>
+  </nav>
+  <main>
+
+  <section id="s1">
+    <h2><span class="n">1</span>Резюме и риск-светофор</h2>
+    <p>Перед нами <b>реально работающая производственно-торговая группа</b> из Нижнего Новгорода под единым
+      брендом <b>LETTA</b>. Бенефициар — <b>Басов Антон Андреевич</b> (100% всех юрлиц). Модель:
+      <b>фабрика «Приволжская» производит → ООО «Летта» продаёт на маркетплейсах</b>. За 4 года группа
+      перестроилась из офлайн-розницы в онлайн: выручка торгового звена выросла <b>в 26 раз</b> (105 млн →
+      2,67 млрд ₽ без НДС), старая розничная сеть (М-Трейд, Рус-Трейд) ликвидирована.</p>
+    <div class="grid">
+      <div class="stat"><b>~2,67 млрд ₽</b><span>внешняя выручка группы 2025 (без НДС)</span></div>
+      <div class="stat"><b>~480 млн ₽</b><span>совокупный капитал (растёт)</span></div>
+      <div class="stat"><b>~227 чел.</b><span>занятых (фабрика 170 + торговля)</span></div>
+      <div class="stat"><b>4.7 / 5</b><span>рейтинг «ООО Летта» на Яндекс.Маркете</span></div>
+    </div>
+    <div class="tblwrap"><table class="risk-tbl">
+      <thead><tr><th></th><th>Зона</th><th style="text-align:left">Комментарий</th></tr></thead>
+      <tbody>
+        <tr><td>🟢</td><td style="text-align:left">Реальность бизнеса</td><td style="text-align:left">Настоящее производство (Приволжская, 170 чел., среднее предприятие, ~500 тыс. изделий/год) + растущий МП-канал</td></tr>
+        <tr><td>🟢</td><td style="text-align:left">Капитал / устойчивость</td><td style="text-align:left">Совокупный капитал ~480 млн, положительный и растущий во всех живых звеньях</td></tr>
+        <tr><td>🟢</td><td style="text-align:left">Прибыльность</td><td style="text-align:left">Прибыльны и фабрика (ЧП 69 млн), и «Летта» (ЧП 34 млн); контур ~96 млн</td></tr>
+        <tr><td>🟢</td><td style="text-align:left">Долг / суды / ФНС</td><td style="text-align:left">Долг мал, банкротств и недоимок нет, суды мелкие (Летта чаще истец)</td></tr>
+        <tr><td>🟡</td><td style="text-align:left">Ликвидность (касса)</td><td style="text-align:left">Живых денег очень мало (Летта 3,8, фабрика 0,3 млн) при больших запасах</td></tr>
+        <tr><td>🟡</td><td style="text-align:left">«Прочие расходы» Летта'25</td><td style="text-align:left">205,9 млн срезали чистую прибыль вдвое (68→34); статья непрозрачна</td></tr>
+        <tr><td>🟡</td><td style="text-align:left">Запасы</td><td style="text-align:left">Склад «Летта» вырос ×2,2 за год до 570 млн — риск затоваривания</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="s2">
+    <h2><span class="n">2</span>Юридическая структура</h2>
+    <p><b>Бенефициар (ЕГРЮЛ):</b> Басов Антон Андреевич — единственный учредитель (100%) и гендиректор
+      торгового блока всех юрлиц. Головного АО нет, доли публичны напрямую. Директор фабрики с 03.2025 —
+      Басова Анастасия Юрьевна (родственная связь, наёмный директор). Все компании — по одному адресу:
+      д. Малая Ельня, ул. Промзона, 2/2 (Нижний Новгород), единый домен pmf.su.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Юрлицо</th><th>ИНН</th><th>Рег.</th><th style="text-align:left">Роль</th><th>СЧР'25</th></tr></thead>
+      <tbody>
+        <tr><td>МФ «Приволжская»</td><td>5260419988</td><td>2015</td><td style="text-align:left">Фабрика: мебель/матрасы + металлокаркас</td><td>170</td></tr>
+        <tr><td>ООО «Летта»</td><td>5250075054</td><td>2021</td><td style="text-align:left">Маркетплейс-оператор (letta.shop)</td><td>52</td></tr>
+        <tr><td>ООО «Е Мебель»</td><td>5250077598</td><td>2023</td><td style="text-align:left">2-й оператор МП — свёрнут в 2025</td><td>5</td></tr>
+        <tr><td>ИП Басов А.А.</td><td>—</td><td>2007</td><td style="text-align:left">Держатель 2 товарных знаков (роялти)</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:13px;color:var(--muted)">Ликвидированы (старая офлайн-розница): ООО «М-Трейд»
+      (ликв. 01.2025), ООО «Рус-Трейд» (ликв. 07.2024).</p>
+    <div class="tree">Басов Антон Андреевич (100% / гендиректор)
+├── ООО «МФ Приволжская» (5260419988) ... ФАБРИКА, 170 чел., pmf.su, дир. Басова А.Ю.
+├── ООО «ЛЕТТА» (5250075054) ............. маркетплейс-оператор, letta.shop
+├── ООО «Е МЕБЕЛЬ» (5250077598) ......... 2-й оператор МП, свёрнут (2025 ≈ 0)
+├── ИП Басов А.А. (2007) ................ держатель 2 ТЗ → роялти
+└── М-Трейд / Рус-Трейд ................. ликвидированы 2024–2025 (старая розница)</div>
+    <div class="callout"><b>Внутригрупповая модель:</b> Приволжская (фабрика) → «Летта» → маркетплейсы.
+      Фабрика продаёт продукцию торговому дому (по вводной — 100% сбыта внутрь), «Летта» реализует её на
+      Ozon/WB/Я.Маркете. Поэтому выручки <b>не складываются</b>: выручка фабрики (500 млн) — внутренняя,
+      внешняя выручка группы = продажи «Летта» наружу (2,67 млрд).</div>
+  </section>
+
+  <section id="s3">
+    <h2><span class="n">3</span>Бизнес и производство</h2>
+    <p><b>Бренд LETTA</b> (letta.ru / letta.shop / pmf.su). Позиционирование — «практичная и качественная
+      мебель <b>в стиле ИКЕА</b>», слоган «<i>Счастливая мебель — в каждый дом!</i>». Стандарт ГОСТ 16371-2014,
+      гарантия 24 мес., заявленный срок службы 10 лет.</p>
+    <h3>Ассортимент</h3>
+    <p>Корпусная и мягкая мебель, кухни, спальни и кровати, стеллажи (линейки Tokyo, Frame, Hardy, Quattro,
+      Zett), шкафы, комоды, тумбы, столы, офисная и гостиничная мебель, <b>матрасы</b>, а также
+      <b>мебель на металлокаркасе</b> (металлообработка — собственный передел, ОКВЭД 25.61/25.62).</p>
+    <h3>Фабрика «Приволжская»</h3>
+    <ul>
+      <li>3 производственных цеха, включая <b>цех металлокаркасов</b>; ~<b>500 000 изделий/год</b>, отгрузка до 120 т/сутки.</li>
+      <li>Сырьё: KRONOSTAR, KRONOSPAN, BOYARD, УРАЛПЛИТ.</li>
+      <li><b>Эксклюзивный поставщик федеральной сети «Пол Цены»</b> (100+ магазинов в европейской части РФ).</li>
+      <li>Категория МСП — среднее предприятие; ССЧ 170 (2025).</li>
+    </ul>
+    <h3>История (по версии группы)</h3>
+    <p>2006 — старт серийного производства; 2007 — фабрика «Приволжская»; 2014 — цех мягкой мебели, оформление
+      ГК LETTA; 2022 — сеть из 15 контрактных фабрик, запуск дивизиона металлокаркасной мебели, склад 2000+ м²;
+      2023 — до 31 контрактной фабрики. Модель — собственное производство + сеть контрактных производств по РФ.
+      <span style="color:var(--muted)">(Целевое юрлицо фабрики 5260419988 в ЕГРЮЛ с 2015; более ранняя история — предшественники.)</span></p>
+  </section>
+
+  <section id="s4">
+    <h2><span class="n">4</span>Каналы продаж и маркетплейсы</h2>
+    <p>Основной канал — <b>маркетплейсы</b> (собственных салонов больше нет). Продавец — <b>ООО «Летта»</b>.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th style="text-align:left">Площадка</th><th style="text-align:left">Продавец / бренд</th><th style="text-align:left">Показатели</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left">Яндекс.Маркет</td><td style="text-align:left">ООО «Летта»</td><td style="text-align:left">рейтинг <b>4.7/5</b>, ~840 оценок, ~2000 покупок</td></tr>
+        <tr><td style="text-align:left">Ozon</td><td style="text-align:left">бренд LETTA (id 86258812)</td><td style="text-align:left">комоды, стеллажи, тумбы, столы</td></tr>
+        <tr><td style="text-align:left">Wildberries</td><td style="text-align:left">бренд LETTA</td><td style="text-align:left">каталоги 2022–2025</td></tr>
+        <tr><td style="text-align:left">Мегамаркет</td><td style="text-align:left">бренд LETTA</td><td style="text-align:left">официальный каталог</td></tr>
+        <tr><td style="text-align:left">B2B-опт</td><td style="text-align:left">b2b-letta.ru</td><td style="text-align:left">опт + дилерская программа, помощь партнёрам с выходом на МП</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:13px;color:var(--muted)">Также реселлеры: ВсеИнструменты.ру, OnlineTrade, INMYROOM,
+      E-Katalog. Точные рейтинги/число товаров продавца на Ozon и WB закрыты антиботом — по косвенным данным
+      продавец тот же (ООО «Летта»).</p>
+  </section>
+
+  <section id="s5">
+    <h2><span class="n">5</span>Финансы группы (без НДС)</h2>
+    <p>Все суммы — млн ₽, из бухгалтерского ОПУ/баланса (ГИР БО), <b>без НДС</b>.</p>
+    <h3>ООО «Летта» — маркетплейс-оператор (ядро внешней выручки)</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Год</th><th>Выручка</th><th>Валовая</th><th>Приб.продаж</th><th>Проч.расх.</th><th>Чистая</th><th>Капитал</th><th>Запасы</th><th>Деньги</th></tr></thead>
+      <tbody>
+        <tr><td>2021</td><td>104,8</td><td>34,2</td><td>—</td><td>—</td><td>29,5</td><td>29,5</td><td>33,1</td><td>0,0</td></tr>
+        <tr><td>2022</td><td>1 032,2</td><td>142,0</td><td>—</td><td>—</td><td>102,5</td><td>134,5</td><td>193,9</td><td>0,2</td></tr>
+        <tr><td>2023</td><td>1 689,7</td><td>628,0</td><td>92,4</td><td>16,5</td><td>77,2</td><td>183,9</td><td>188,4</td><td>0,1</td></tr>
+        <tr><td>2024</td><td>1 908,5</td><td>711,2</td><td>139,7</td><td>99,0</td><td>68,4</td><td>252,3</td><td>261,7</td><td>27,2</td></tr>
+        <tr><td><b>2025</b></td><td><b>2 670,0</b></td><td><b>986,4</b></td><td><b>206,8</b></td><td><b>205,9</b></td><td><b>34,1</b></td><td><b>286,4</b></td><td><b>570,5</b></td><td><b>3,8</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="chart">
+      <h4>Выручка «Летта», млн ₽ (без НДС) — ×26 за 4 года</h4>
+      <div class="bars">
+        <div class="barcol"><div class="barpair"><div class="bar rev" style="height:4%"><span>105</span></div></div><div class="yr">2021</div></div>
+        <div class="barcol"><div class="barpair"><div class="bar rev" style="height:39%"><span>1032</span></div></div><div class="yr">2022</div></div>
+        <div class="barcol"><div class="barpair"><div class="bar rev" style="height:63%"><span>1690</span></div></div><div class="yr">2023</div></div>
+        <div class="barcol"><div class="barpair"><div class="bar rev" style="height:71%"><span>1908</span></div></div><div class="yr">2024</div></div>
+        <div class="barcol"><div class="barpair"><div class="bar rev" style="height:100%"><span>2670</span></div></div><div class="yr">2025</div></div>
+      </div>
+    </div>
+    <div class="callout amber"><b>🟡 Качество прибыли 2025.</b> Прибыль от продаж выросла (140→207 млн), но
+      чистая прибыль <b>упала вдвое (68→34)</b>: её съела статья «прочие расходы» — <b>205,9 млн</b>
+      (в 2023 было 17, в 2024 — 99). В открытой отчётности статья не детализирована (возможны списания,
+      возвраты/штрафы маркетплейсов, резервы, внутригрупповые). При этом капитал продолжил расти (252→286),
+      но касса тонкая (3,8 млн), а запасы взлетели до 570 млн, и появились долгосрочные займы 172 млн.</div>
+
+    <h3>МФ «Приволжская» — фабрика (внутренняя выручка)</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Год</th><th>Выручка</th><th>Валовая</th><th>Чистая</th><th>Капитал</th><th>Займы</th></tr></thead>
+      <tbody>
+        <tr><td>2021</td><td>328,1</td><td>108,4</td><td>30,0</td><td>47,6</td><td>8,8</td></tr>
+        <tr><td>2022</td><td>468,7</td><td>158,0</td><td>44,8</td><td>92,4</td><td>37,2</td></tr>
+        <tr><td>2023</td><td>461,0</td><td>138,1</td><td>22,4</td><td>114,8</td><td>13,3</td></tr>
+        <tr><td>2024</td><td>670,9</td><td>226,2</td><td>11,3</td><td>126,1</td><td>23,7</td></tr>
+        <tr><td><b>2025</b></td><td><b>500,1</b></td><td><b>218,6</b></td><td><b>68,8</b></td><td><b>194,9</b></td><td><b>2,5</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="chart">
+      <h4>Капитал контура растёт, млн ₽ — «Летта» + «Приволжская»</h4>
+      <div class="bars">
+        <div class="barcol"><div class="barpair"><div class="bar cap" style="height:16%"><span>77</span></div><div class="bar prof" style="height:10%"><span>48</span></div></div><div class="yr">2021</div></div>
+        <div class="barcol"><div class="barpair"><div class="bar cap" style="height:28%"><span>135</span></div><div class="bar prof" style="height:19%"><span>92</span></div></div><div class="yr">2022</div></div>
+        <div class="barcol"><div class="barpair"><div class="bar cap" style="height:38%"><span>184</span></div><div class="bar prof" style="height:24%"><span>115</span></div></div><div class="yr">2023</div></div>
+        <div class="barcol"><div class="barpair"><div class="bar cap" style="height:53%"><span>252</span></div><div class="bar prof" style="height:26%"><span>126</span></div></div><div class="yr">2024</div></div>
+        <div class="barcol"><div class="barpair"><div class="bar cap" style="height:60%"><span>286</span></div><div class="bar prof" style="height:41%"><span>195</span></div></div><div class="yr">2025</div></div>
+      </div>
+      <div class="lgnd"><span><i style="background:#127a8a"></i>Капитал «Летта»</span><span><i style="background:#4fb3a4"></i>Капитал «Приволжская»</span></div>
+    </div>
+    <p>В 2025 выручка фабрики −25% (671→500 — это внутренние трансфертные цены, не рынок), но чистая прибыль
+      выросла ×6 (11→69), капитал +55% (126→195), долг почти обнулён. «Е Мебель» в 2025 свёрнута (выручка 0,09,
+      убыток −6,7, капитал −1,6 — микровеличина).</p>
+    <div class="callout green"><b>Консолидация 2025:</b> внешняя выручка группы ≈ <b>2,67 млрд ₽</b> без НДС
+      (~3,2 с НДС); чистая прибыль контура ≈ 96 млн; совокупный капитал ≈ 480 млн (растёт). Налоги'25:
+      Летта 88,5 млн + Приволжская 86,7 млн, недоимок нет.</div>
+  </section>
+
+  <section id="s6">
+    <h2><span class="n">6</span>Репутация и HR</h2>
+    <ul>
+      <li><b>Яндекс.Маркет: 4.7/5</b> (~840 оценок) — основной подтверждённый публичный рейтинг продавца «ООО Летта».</li>
+      <li><b>Похвалы:</b> соотношение цена/качество («ИКЕА дешевле»), широкий ассортимент, официальное трудоустройство и своевременная зарплата (в отзывах сотрудников).</li>
+      <li><b>Жалобы:</b> отдельные негативные отзывы на дефекты и качество сборки мебели, опыт покупки через МП.</li>
+      <li><b>HR:</b> аккаунты на hh.ru — «Мебельная фабрика Приволжская» и «Группа компаний LETTA» (~5 вакансий, в т.ч. Москва). Ищут производственный персонал (мебельное/металлопроизводство) и роли под маркетплейсы.</li>
+    </ul>
+    <p style="font-size:13px;color:var(--muted)">Числовые рейтинги Фламп/Zoon/Яндекс.Карт и Dream Job, а также
+      точное число вакансий hh — закрыты геоблоком/антиботом из среды сбора; доступны при заходе из РФ-сети.</p>
+  </section>
+
+  <section id="s7">
+    <h2><span class="n">7</span>Суды, проверки, Федресурс</h2>
+    <ul>
+      <li><b>Суды «Летта»:</b> 4 дела, ∑16,9 млн — компания в основном <b>истец</b> (взыскивает с контрагентов: ИП Галактионова 12,8 млн, БауМебель 1,75 млн, Ситирум 1,2 млн). Как ответчик — 1 дело (КапсулаМебель 1,16 млн).</li>
+      <li><b>Суды «Приволжская»:</b> 5 дел, ∑1,0 млн — все старые (2018–2020), неактивные (взносы ПФР, мелкие хозспоры).</li>
+      <li><b>Федресурс:</b> только договоры лизинга — «Летта» 8, «Приволжская» 69 (активный парк оборудования; в 2026 массово закрываются старые договоры — обновление парка).</li>
+      <li><b>ФССП:</b> у фабрики 2 мелких исполнительных производства (~70 тыс. ₽). Банкротств (ЕФРСБ) — нет. Недоимок ФНС — нет.</li>
+    </ul>
+    <div class="callout green">Судебно-долговой фон <b>чистый</b>: банкротств нет, недоимок нет, иски мелкие
+      и в основном в пользу группы. Признаков несостоятельности не выявлено.</div>
+  </section>
+
+  <section id="s8">
+    <h2><span class="n">8</span>Сводные выводы и ограничения</h2>
+    <div class="callout green"><b>Главный вывод — 🟢 здоровая группа с флагами.</b> Реально работающая
+      производственно-торговая группа: собственная фабрика (170 чел., ~500 тыс. изделий/год) + быстрорастущий
+      маркетплейс-оператор (выручка ×26 за 4 года до 2,67 млрд). Оба звена прибыльны, совокупный капитал
+      ~480 млн растёт, долг мал, налоги и суды чисты. Удачная перестройка из офлайн-розницы в онлайн.</div>
+    <h3>Точки внимания (🟡)</h3>
+    <ul>
+      <li><b>Тонкая ликвидность:</b> живых денег очень мало (Летта 3,8, фабрика 0,3 млн) при запасах 570 млн — бизнес держится на обороте и товарном кредите.</li>
+      <li><b>«Прочие расходы» 206 млн у «Летта» в 2025</b> срезали чистую прибыль вдвое — статья непрозрачна, требует расшифровки у собственника.</li>
+      <li><b>Рост запасов ×2,2</b> до 570 млн — риск затоваривания склада маркетплейсов и заморозки оборотных средств.</li>
+      <li><b>Концентрация:</b> весь сбыт — маркетплейсы + эксклюзив «Пол Цены»; зависимость от политики площадок и одного крупного B2B-клиента.</li>
+    </ul>
+    <h3>Ограничения данных</h3>
+    <ul>
+      <li>Внутренние трансфертные цены (фабрика→Летта) не раскрыты — консолидированная маржа оценочна.</li>
+      <li>Статья «прочие расходы» 2350 у «Летта» в открытой отчётности не детализирована.</li>
+      <li>Рейтинги Ozon/WB-продавца, Яндекс.Карт/Фламп/Zoon и Dream Job/hh не сняты из-за геоблока — доступны из РФ-сети.</li>
+    </ul>
+  </section>
+
+  <section id="author">
+    <h2><span class="n">★</span>Об авторе и услуги</h2>
+    <div class="author-grid">
+      <img src="author.jpg" alt="Александр Борисович Дублин — аналитик бизнеса, консультант, ментор">
+      <div>
+        <h3>Александр Борисович Дублин</h3>
+        <p class="role">Аналитик бизнеса, консультант, ментор</p>
+        <p>Помогаю собственникам разобраться, что на самом деле происходит в бизнесе, и превратить хаос
+          ежедневных решений в понятную систему цифр, процессов и действий. Последние 10 лет глубоко работаю
+          с мебельным бизнесом, но подход шире отрасли.</p>
+        <div class="callout"><b>Это досье — живой пример того, что делает ИИ.</b> Сбор данных из десятка
+          источников, юрструктура, расчёты и вёрстка сделаны с помощью ИИ за часы. Тот же подход применим к
+          анализу конкурентов, поставщиков, рынка и вашей собственной отчётности.</div>
+        <div class="svc">
+          <div class="svc-card"><h4>🤖 Искусственный интеллект</h4><ul><li>Обучение работе с ИИ</li><li>Внедрение ИИ в аналитику, отчёты, CRM</li><li>Аналитические досье «под ключ»</li></ul></div>
+          <div class="svc-card"><h4>📊 Анализ и управление</h4><ul><li>Управленческий учёт и модель бизнеса</li><li>Диагностика и стратегия</li><li>Менторинг собственника</li></ul></div>
+        </div>
+        <p style="margin-top:14px;font-size:13px">Реестр всех досье: <a href="https://abdublinn.github.io/mebel-reestr/">abdublinn.github.io/mebel-reestr</a></p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">Аналитическое досье «Группа LETTA» · Александр Дублин · 2026 · по открытым данным
+    (Checko / ЕГРЮЛ / ГИР БО + веб-разведка). Не является офертой или юридическим заключением.</div>
+</footer>
+
+</body>
+</html>
